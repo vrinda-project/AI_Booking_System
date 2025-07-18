@@ -1,6 +1,6 @@
 from langchain.agents import initialize_agent, AgentType
 from langchain.tools import Tool
-# from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from typing import List, Dict, Any
 from ..tools.database_tools import create_booking_tools
 from ..tools.notification_tools import create_notification_tools
