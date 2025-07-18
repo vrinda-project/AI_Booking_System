@@ -1,5 +1,8 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import os
 from sqlalchemy.orm import Session
 from .database import engine, get_db
 from .database import Base
@@ -11,7 +14,11 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="AI Hospital Booking System",
     description="Voice-powered appointment booking system with Twilio integration",
-    version="1.0.0"
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
+    swagger_ui_parameters={"persistAuthorization": True, "displayRequestDuration": True}
 )
 
 # CORS middleware
@@ -22,6 +29,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount static files directory if it exists
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.exists(static_dir):
+    app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # Include routers
 app.include_router(twilio_router)
@@ -36,19 +48,44 @@ app.include_router(department_management_router)
 
 @app.get("/")
 async def root():
+    # Check if static HTML file exists
+    static_index = os.path.join(os.path.dirname(__file__), "static", "index.html")
+    if os.path.exists(static_index):
+        return FileResponse(static_index)
+    
+    # Fallback to JSON response
     return {
         "message": "AI Hospital Booking System API",
         "version": "1.0.0",
         "endpoints": {
             "twilio_webhook": "/api/twilio/voice/incoming",
             "appointments": "/api/appointments",
-            "doctors": "/api/doctors"
+            "doctors": "/api/doctors",
+            "swagger_ui": "/docs",
+            "redoc": "/redoc"
         }
     }
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
+    return {"status": "healthy", "timestamp": str(datetime.now())}
+
+@app.get("/debug")
+async def debug_info():
+    """Debug endpoint to check API configuration"""
+    import sys
+    import platform
+    import os
+    
+    return {
+        "python_version": sys.version,
+        "platform": platform.platform(),
+        "environment": {
+            key: value for key, value in os.environ.items() 
+            if key.startswith(("DATABASE", "REDIS", "APP_", "PORT")) and "PASSWORD" not in key.upper()
+        },
+        "api_status": "running"
+    }
 
 # Initialize sample data and LangChain agents
 @app.on_event("startup")
