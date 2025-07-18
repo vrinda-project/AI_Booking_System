@@ -1,7 +1,7 @@
 from langchain.agents import create_openai_functions_agent, AgentExecutor
 from langchain.tools import Tool
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_google_genai import ChatGoogleGenerativeAI
+# from langchain_google_genai import ChatGoogleGenerativeAI
 from typing import List, Dict, Any
 from ..tools.database_tools import create_query_tools
 from ..rag.vector_store import RAGSystem
