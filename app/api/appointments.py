@@ -6,6 +6,7 @@ from ..database import get_db
 from ..models import Appointment
 from ..schemas import AppointmentCreate, AppointmentResponse
 from ..services import BookingService
+import traceback
 
 router = APIRouter(prefix="/api/appointments", tags=["appointments"])
 
@@ -24,23 +25,43 @@ async def check_availability(
     except ValueError:
         raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD")
 
-@router.post("/book", response_model=AppointmentResponse)
+@router.post("/book")
 async def book_appointment(
-    patient_phone: str,
-    doctor_id: int,
-    appointment_datetime: datetime,
-    notes: str = None,
+    appointment_data: AppointmentCreate,
     db: Session = Depends(get_db)
 ):
     """Book a new appointment"""
-    booking_service = BookingService(db)
     try:
-        appointment = booking_service.book_appointment(
-            patient_phone, doctor_id, appointment_datetime, notes
+        print(f"Received data: {appointment_data}")
+        
+        # Create patient if not exists
+        from ..models import Patient
+        patient = db.query(Patient).filter(Patient.phone == appointment_data.patient_phone).first()
+        if not patient:
+            patient = Patient(phone=appointment_data.patient_phone)
+            db.add(patient)
+            db.commit()
+            db.refresh(patient)
+        
+        # Create appointment
+        appointment = Appointment(
+            patient_id=patient.id,
+            doctor_id=appointment_data.doctor_id,
+            appointment_datetime=appointment_data.appointment_datetime,
+            notes=appointment_data.notes,
+            status="scheduled"
         )
-        return appointment
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        
+        db.add(appointment)
+        db.commit()
+        db.refresh(appointment)
+        
+        return {"message": "Appointment booked successfully", "appointment_id": appointment.id}
+        
+    except Exception as e:
+        print(f"Booking error: {str(e)}")
+        print(traceback.format_exc())
+        raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
 
 @router.get("/patient/{phone}")
 async def get_patient_appointments(

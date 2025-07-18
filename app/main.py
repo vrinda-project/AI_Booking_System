@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from .database import engine, get_db
 from .database import Base
-from .api import twilio_router, appointments_router, doctors_router
+from .api import twilio_router, appointments_router, doctors_router, hospitals_router, hospital_assignments_router, hospital_details_router, db_view_router, doctor_management_router, department_management_router
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -27,6 +27,12 @@ app.add_middleware(
 app.include_router(twilio_router)
 app.include_router(appointments_router)
 app.include_router(doctors_router)
+app.include_router(hospitals_router)
+app.include_router(hospital_assignments_router)
+app.include_router(hospital_details_router)
+app.include_router(db_view_router)
+app.include_router(doctor_management_router)
+app.include_router(department_management_router)
 
 @app.get("/")
 async def root():
@@ -44,10 +50,13 @@ async def root():
 async def health_check():
     return {"status": "healthy"}
 
-# Initialize sample data
+# Initialize sample data and LangChain agents
 @app.on_event("startup")
 async def startup_event():
-    """Initialize sample data on startup"""
+    """Initialize sample data and LangChain agent system on startup"""
+    print("🚀 Initializing LangChain Agent-based Hospital Booking System...")
+    
+    # Initialize database
     db = next(get_db())
     
     # Check if departments exist
@@ -114,7 +123,18 @@ async def startup_event():
                     db.add(slot)
         
         db.commit()
-        print("Sample data initialized successfully!")
+        print("✅ Sample data initialized successfully!")
+    
+    # Initialize LangChain agent system
+    try:
+        from .agents.root_agent import RootAgent
+        root_agent = RootAgent()
+        print("✅ LangChain agent system initialized successfully!")
+        print("🤖 Available agents: RootAgent, BookingAgent, CancelAgent, RescheduleAgent, QueryAgent, SymptomAgent")
+        print("📚 RAG system with ChromaDB initialized")
+        print("🛠️ Database tools for agents ready")
+    except Exception as e:
+        print(f"⚠️ Warning: LangChain agent initialization failed: {e}")
     
     db.close()
 

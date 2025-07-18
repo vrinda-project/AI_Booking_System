@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from typing import List
 from ..database import get_db
-from ..models import Doctor, Department
+from ..models import Doctor, Department, Hospital
 from ..schemas import DoctorResponse, DepartmentResponse
 
 router = APIRouter(prefix="/api/doctors", tags=["doctors"])
@@ -42,3 +42,26 @@ async def get_departments(db: Session = Depends(get_db)):
     """Get all departments"""
     departments = db.query(Department).all()
     return departments
+
+@router.get("/departments/with-hospitals")
+async def get_departments_with_hospitals(db: Session = Depends(get_db)):
+    """Get all departments with their hospital assignments"""
+    departments = db.query(Department).all()
+    
+    result = []
+    for dept in departments:
+        hospitals_info = []
+        for hospital in dept.hospitals:
+            hospitals_info.append({
+                "id": hospital.id,
+                "name": hospital.name
+            })
+        
+        result.append({
+            "id": dept.id,
+            "name": dept.name,
+            "description": dept.description,
+            "hospitals": hospitals_info
+        })
+    
+    return result

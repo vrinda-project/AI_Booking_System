@@ -8,8 +8,11 @@ class AppointmentBase(BaseModel):
     appointment_datetime: datetime
     notes: Optional[str] = None
 
-class AppointmentCreate(AppointmentBase):
-    pass
+class AppointmentCreate(BaseModel):
+    patient_phone: str
+    doctor_id: int
+    appointment_datetime: datetime
+    notes: Optional[str] = None
 
 class AppointmentResponse(AppointmentBase):
     id: int

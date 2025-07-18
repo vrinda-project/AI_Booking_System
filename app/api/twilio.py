@@ -8,14 +8,15 @@ router = APIRouter(prefix="/api/twilio", tags=["twilio"])
 
 @router.post("/voice/incoming")
 async def handle_incoming_call(request: Request, db: Session = Depends(get_db)):
-    """Handle incoming voice calls from Twilio"""
+    """MANDATORY: Handle incoming voice calls using LangChain agents"""
     twilio_service = TwilioService()
     
     # Welcome message
     welcome_message = """
-    Hello! Welcome to City Hospital's AI appointment booking system. 
-    I can help you book appointments, answer questions about symptoms, 
-    or provide general information. How can I assist you today?
+    Hello! Welcome to City Hospital's AI appointment booking system powered by advanced AI agents. 
+    I can help you book appointments, cancel or reschedule existing appointments, 
+    analyze symptoms for department recommendations, or answer general questions. 
+    How can I assist you today?
     """
     
     twiml_response = twilio_service.create_voice_response(welcome_message)
@@ -28,8 +29,9 @@ async def handle_voice_input(
     From: str = Form(...),
     db: Session = Depends(get_db)
 ):
-    """Process speech input from Twilio"""
+    """MANDATORY: Process speech input through LangChain agent hierarchy"""
     twilio_service = TwilioService()
+    # REQUIRED: Use LangChain agent-based AI service
     ai_service = AIService(db)
     
     if not SpeechResult:
@@ -38,12 +40,12 @@ async def handle_voice_input(
         )
         return Response(content=twiml_response, media_type="application/xml")
     
-    # Process the speech with AI
+    # MANDATORY: Process through LangChain agent system
     ai_response = ai_service.process_message(From, SpeechResult)
     
     # Check if this should end the conversation
     end_conversation = any(phrase in ai_response.lower() for phrase in [
-        "goodbye", "thank you for calling", "appointment confirmed"
+        "goodbye", "thank you for calling", "appointment confirmed", "appointment cancelled", "appointment rescheduled"
     ])
     
     twiml_response = twilio_service.create_voice_response(

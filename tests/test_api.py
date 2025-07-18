@@ -1,25 +1,29 @@
 import pytest
-from fastapi.testclient import TestClient
+from httpx import AsyncClient
 from app.main import app
 
-client = TestClient(app)
+# Use AsyncClient instead of TestClient for newer FastAPI versions
+@pytest.fixture
+async def client():
+    async with AsyncClient(app=app, base_url="http://test") as client:
+        yield client
 
-def test_root_endpoint():
-    response = client.get("/")
+async def test_root_endpoint(client):
+    response = await client.get("/")
     assert response.status_code == 200
     assert "AI Hospital Booking System API" in response.json()["message"]
 
-def test_health_check():
-    response = client.get("/health")
+async def test_health_check(client):
+    response = await client.get("/health")
     assert response.status_code == 200
     assert response.json()["status"] == "healthy"
 
-def test_get_departments():
-    response = client.get("/api/doctors/departments")
+async def test_get_departments(client):
+    response = await client.get("/api/doctors/departments")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
-def test_get_doctors():
-    response = client.get("/api/doctors/")
+async def test_get_doctors(client):
+    response = await client.get("/api/doctors/")
     assert response.status_code == 200
     assert isinstance(response.json(), list)

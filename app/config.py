@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     twilio_auth_token: str
     twilio_phone_number: str
     
-    # AI Services
+    # AI Services - MANDATORY for LangChain agents
     google_ai_api_key: str
     openai_api_key: str
     

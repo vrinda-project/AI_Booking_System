@@ -1,3 +1,9 @@
 from .twilio import router as twilio_router
 from .appointments import router as appointments_router
 from .doctors import router as doctors_router
+from .hospitals import router as hospitals_router
+from .hospital_assignments import router as hospital_assignments_router
+from .hospital_details import router as hospital_details_router
+from .db_view import router as db_view_router
+from .doctor_management import router as doctor_management_router
+from .department_management import router as department_management_router
