@@ -1,0 +1,2376 @@
+2025-07-23 04:48:16,088 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-23 04:56:19,591 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', update...
+                                                    ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'status': 'string', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', update...
+                                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\hospitals.py", line 125, in update_hospital
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', update...
+                                                    ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'status': 'string', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-07-23 04:57:16,460 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', update...
+                                                    ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'status': 'string', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', update...
+                                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\hospitals.py", line 125, in update_hospital
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', update...
+                                                    ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'status': 'string', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-07-23 05:01:55,329 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: ... hospitals SET name='General', admin_id=1, status='string', ...
+                                                             ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, admin_id=%(admin_id)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'admin_id': 1, 'status': 'string', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input value for enum hospital_status: "string"
+LINE 1: ... hospitals SET name='General', admin_id=1, status='string', ...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\hospitals.py", line 125, in update_hospital
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: ... hospitals SET name='General', admin_id=1, status='string', ...
+                                                             ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, admin_id=%(admin_id)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'admin_id': 1, 'status': 'string', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-07-23 05:04:16,905 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', licens...
+                                                    ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, status=%(status)s, license_number=%(license_number)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'status': 'string', 'license_number': 'active', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', licens...
+                                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\hospitals.py", line 125, in update_hospital
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', licens...
+                                                    ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, status=%(status)s, license_number=%(license_number)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'status': 'string', 'license_number': 'active', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-07-23 05:04:27,482 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', licens...
+                                                    ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, status=%(status)s, license_number=%(license_number)s, established_year=%(established_year)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'status': 'string', 'license_number': 'active', 'established_year': 3, 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', licens...
+                                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\hospitals.py", line 125, in update_hospital
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET name='General', status='string', licens...
+                                                    ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, status=%(status)s, license_number=%(license_number)s, established_year=%(established_year)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'status': 'string', 'license_number': 'active', 'established_year': 3, 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-07-23 05:04:55,433 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: ...als SET name='General', phone='345678912', status='string', ...
+                                                             ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, phone=%(phone)s, status=%(status)s, license_number=%(license_number)s, established_year=%(established_year)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'phone': '345678912', 'status': 'string', 'license_number': 'active', 'established_year': 3, 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input value for enum hospital_status: "string"
+LINE 1: ...als SET name='General', phone='345678912', status='string', ...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\hospitals.py", line 125, in update_hospital
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: ...als SET name='General', phone='345678912', status='string', ...
+                                                             ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, phone=%(phone)s, status=%(status)s, license_number=%(license_number)s, established_year=%(established_year)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'General', 'phone': '345678912', 'status': 'string', 'license_number': 'active', 'established_year': 3, 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-07-23 05:06:45,730 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.ForeignKeyViolation) insert or update on table "departments" violates foreign key constraint "departments_head_doctor_id_fkey"
+DETAIL:  Key (head_doctor_id)=(0) is not present in table "doctors".
+
+[SQL: INSERT INTO departments (name, description, hospital_id, head_doctor_id, is_active, created_at, updated_at, created_by, updated_by, created_ip, updated_ip) VALUES (%(name)s, %(description)s, %(hospital_id)s, %(head_doctor_id)s, %(is_active)s, now(), now(), %(created_by)s, %(updated_by)s, %(created_ip)s, %(updated_ip)s) RETURNING departments.id, departments.created_at, departments.updated_at]
+[parameters: {'name': 'Cardiology', 'description': 'string', 'hospital_id': 3, 'head_doctor_id': 0, 'is_active': True, 'created_by': '1', 'updated_by': None, 'created_ip': None, 'updated_ip': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: insert or update on table "departments" violates foreign key constraint "departments_head_doctor_id_fkey"
+DETAIL:  Key (head_doctor_id)=(0) is not present in table "doctors".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\departments.py", line 64, in create_department
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) insert or update on table "departments" violates foreign key constraint "departments_head_doctor_id_fkey"
+DETAIL:  Key (head_doctor_id)=(0) is not present in table "doctors".
+
+[SQL: INSERT INTO departments (name, description, hospital_id, head_doctor_id, is_active, created_at, updated_at, created_by, updated_by, created_ip, updated_ip) VALUES (%(name)s, %(description)s, %(hospital_id)s, %(head_doctor_id)s, %(is_active)s, now(), now(), %(created_by)s, %(updated_by)s, %(created_ip)s, %(updated_ip)s) RETURNING departments.id, departments.created_at, departments.updated_at]
+[parameters: {'name': 'Cardiology', 'description': 'string', 'hospital_id': 3, 'head_doctor_id': 0, 'is_active': True, 'created_by': '1', 'updated_by': None, 'created_ip': None, 'updated_ip': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-07-23 05:15:30,871 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.ForeignKeyViolation) insert or update on table "doctors" violates foreign key constraint "doctors_user_id_fkey"
+DETAIL:  Key (user_id)=(0) is not present in table "users".
+
+[SQL: INSERT INTO doctors (user_id, full_name, email, phone, specialty, department_id, hospital_id, specialization, qualification, experience_years, consultation_fee, languages_spoken, awards_recognition, biography, availability, is_active, license_number, created_at, updated_at, created_by, updated_by, created_ip, updated_ip) VALUES (%(user_id)s, %(full_name)s, %(email)s, %(phone)s, %(specialty)s, %(department_id)s, %(hospital_id)s, %(specialization)s, %(qualification)s, %(experience_years)s, %(consultation_fee)s, %(languages_spoken)s, %(awards_recognition)s, %(biography)s, %(availability)s::JSON, %(is_active)s, %(license_number)s, now(), now(), %(created_by)s, %(updated_by)s, %(created_ip)s, %(updated_ip)s) RETURNING doctors.id, doctors.created_at, doctors.updated_at]
+[parameters: {'user_id': 0, 'full_name': 'string', 'email': 'user@example.com', 'phone': 'string', 'specialty': 'string', 'department_id': 10, 'hospital_id': 3, 'specialization': 'string', 'qualification': 'string', 'experience_years': 0, 'consultation_fee': 0.0, 'languages_spoken': 'string', 'awards_recognition': 'string', 'biography': 'string', 'availability': '{"additionalProp1": {}}', 'is_active': True, 'license_number': 'string', 'created_by': '1', 'updated_by': None, 'created_ip': None, 'updated_ip': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: insert or update on table "doctors" violates foreign key constraint "doctors_user_id_fkey"
+DETAIL:  Key (user_id)=(0) is not present in table "users".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\doctors.py", line 68, in create_doctor
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) insert or update on table "doctors" violates foreign key constraint "doctors_user_id_fkey"
+DETAIL:  Key (user_id)=(0) is not present in table "users".
+
+[SQL: INSERT INTO doctors (user_id, full_name, email, phone, specialty, department_id, hospital_id, specialization, qualification, experience_years, consultation_fee, languages_spoken, awards_recognition, biography, availability, is_active, license_number, created_at, updated_at, created_by, updated_by, created_ip, updated_ip) VALUES (%(user_id)s, %(full_name)s, %(email)s, %(phone)s, %(specialty)s, %(department_id)s, %(hospital_id)s, %(specialization)s, %(qualification)s, %(experience_years)s, %(consultation_fee)s, %(languages_spoken)s, %(awards_recognition)s, %(biography)s, %(availability)s::JSON, %(is_active)s, %(license_number)s, now(), now(), %(created_by)s, %(updated_by)s, %(created_ip)s, %(updated_ip)s) RETURNING doctors.id, doctors.created_at, doctors.updated_at]
+[parameters: {'user_id': 0, 'full_name': 'string', 'email': 'user@example.com', 'phone': 'string', 'specialty': 'string', 'department_id': 10, 'hospital_id': 3, 'specialization': 'string', 'qualification': 'string', 'experience_years': 0, 'consultation_fee': 0.0, 'languages_spoken': 'string', 'awards_recognition': 'string', 'biography': 'string', 'availability': '{"additionalProp1": {}}', 'is_active': True, 'license_number': 'string', 'created_by': '1', 'updated_by': None, 'created_ip': None, 'updated_ip': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-07-23 05:15:56,464 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.ForeignKeyViolation) insert or update on table "doctors" violates foreign key constraint "doctors_user_id_fkey"
+DETAIL:  Key (user_id)=(0) is not present in table "users".
+
+[SQL: INSERT INTO doctors (user_id, full_name, email, phone, specialty, department_id, hospital_id, specialization, qualification, experience_years, consultation_fee, languages_spoken, awards_recognition, biography, availability, is_active, license_number, created_at, updated_at, created_by, updated_by, created_ip, updated_ip) VALUES (%(user_id)s, %(full_name)s, %(email)s, %(phone)s, %(specialty)s, %(department_id)s, %(hospital_id)s, %(specialization)s, %(qualification)s, %(experience_years)s, %(consultation_fee)s, %(languages_spoken)s, %(awards_recognition)s, %(biography)s, %(availability)s::JSON, %(is_active)s, %(license_number)s, now(), now(), %(created_by)s, %(updated_by)s, %(created_ip)s, %(updated_ip)s) RETURNING doctors.id, doctors.created_at, doctors.updated_at]
+[parameters: {'user_id': 0, 'full_name': 'string', 'email': 'user@example.com', 'phone': 'string', 'specialty': 'string', 'department_id': 10, 'hospital_id': 3, 'specialization': 'string', 'qualification': 'string', 'experience_years': 6, 'consultation_fee': 200.0, 'languages_spoken': 'string', 'awards_recognition': 'string', 'biography': 'string', 'availability': '{"additionalProp1": {}}', 'is_active': True, 'license_number': 'string', 'created_by': '1', 'updated_by': None, 'created_ip': None, 'updated_ip': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: insert or update on table "doctors" violates foreign key constraint "doctors_user_id_fkey"
+DETAIL:  Key (user_id)=(0) is not present in table "users".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\doctors.py", line 68, in create_doctor
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) insert or update on table "doctors" violates foreign key constraint "doctors_user_id_fkey"
+DETAIL:  Key (user_id)=(0) is not present in table "users".
+
+[SQL: INSERT INTO doctors (user_id, full_name, email, phone, specialty, department_id, hospital_id, specialization, qualification, experience_years, consultation_fee, languages_spoken, awards_recognition, biography, availability, is_active, license_number, created_at, updated_at, created_by, updated_by, created_ip, updated_ip) VALUES (%(user_id)s, %(full_name)s, %(email)s, %(phone)s, %(specialty)s, %(department_id)s, %(hospital_id)s, %(specialization)s, %(qualification)s, %(experience_years)s, %(consultation_fee)s, %(languages_spoken)s, %(awards_recognition)s, %(biography)s, %(availability)s::JSON, %(is_active)s, %(license_number)s, now(), now(), %(created_by)s, %(updated_by)s, %(created_ip)s, %(updated_ip)s) RETURNING doctors.id, doctors.created_at, doctors.updated_at]
+[parameters: {'user_id': 0, 'full_name': 'string', 'email': 'user@example.com', 'phone': 'string', 'specialty': 'string', 'department_id': 10, 'hospital_id': 3, 'specialization': 'string', 'qualification': 'string', 'experience_years': 6, 'consultation_fee': 200.0, 'languages_spoken': 'string', 'awards_recognition': 'string', 'biography': 'string', 'availability': '{"additionalProp1": {}}', 'is_active': True, 'license_number': 'string', 'created_by': '1', 'updated_by': None, 'created_ip': None, 'updated_ip': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-07-23 05:30:42,343 - hospital_booking - ERROR - Error creating hospital: 400: User with ID 1 is not a hospital admin.
+2025-07-23 07:34:17,487 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-23 07:47:24,129 - hospital_booking - ERROR - Unhandled error: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.password_hash AS users_password_hash, users.full_name AS users_full_name, users.phone AS users_phone, users.role AS users_role, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.phone_verified AS users_phone_verified, users.last_login_at AS users_last_login_at, users.profile_picture AS users_profile_picture, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.created_ip AS users_created_ip, users.updated_ip AS users_updated_ip 
+FROM users 
+WHERE users.id = %(id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_1': 1, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 292, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\dependencies\utils.py", line 615, in solve_dependencies
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\dependencies\utils.py", line 640, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\deps.py", line 31, in get_current_user
+    user = db.query(User).filter(User.id == token_data.sub).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2759, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.password_hash AS users_password_hash, users.full_name AS users_full_name, users.phone AS users_phone, users.role AS users_role, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.phone_verified AS users_phone_verified, users.last_login_at AS users_last_login_at, users.profile_picture AS users_profile_picture, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.created_ip AS users_created_ip, users.updated_ip AS users_updated_ip 
+FROM users 
+WHERE users.id = %(id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_1': 1, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+2025-07-23 07:48:09,062 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET address='pala', status='string', update...
+                                                    ^
+
+[SQL: UPDATE hospitals SET address=%(address)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'address': 'pala', 'status': 'string', 'updated_by': '1', 'hospitals_id': 5}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET address='pala', status='string', update...
+                                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\hospitals.py", line 125, in update_hospital
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: UPDATE hospitals SET address='pala', status='string', update...
+                                                    ^
+
+[SQL: UPDATE hospitals SET address=%(address)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'address': 'pala', 'status': 'string', 'updated_by': '1', 'hospitals_id': 5}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-07-23 07:49:50,929 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: ...tals SET name='Marsleeva', address='pala', status='string', ...
+                                                             ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, address=%(address)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'Marsleeva', 'address': 'pala', 'status': 'string', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input value for enum hospital_status: "string"
+LINE 1: ...tals SET name='Marsleeva', address='pala', status='string', ...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\hospitals.py", line 125, in update_hospital
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum hospital_status: "string"
+LINE 1: ...tals SET name='Marsleeva', address='pala', status='string', ...
+                                                             ^
+
+[SQL: UPDATE hospitals SET name=%(name)s, address=%(address)s, status=%(status)s, updated_at=now(), updated_by=%(updated_by)s WHERE hospitals.id = %(hospitals_id)s]
+[parameters: {'name': 'Marsleeva', 'address': 'pala', 'status': 'string', 'updated_by': '1', 'hospitals_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-07-23 08:00:12,758 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.NotNullViolation) null value in column "department_id" of relation "doctors" violates not-null constraint
+DETAIL:  Failing row contains (3, 2, string, user@example.com, string, string, null, 3, string, string, 6, 200.00, string, string, string, {"additionalProp1": {}}, t, string, 2025-07-22 23:51:52.069592, 2025-07-23 02:30:11.214642, 1, null, null, null).
+
+[SQL: UPDATE doctors SET department_id=%(department_id)s, updated_at=now() WHERE doctors.id = %(doctors_id)s]
+[parameters: {'department_id': None, 'doctors_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NotNullViolation: null value in column "department_id" of relation "doctors" violates not-null constraint
+DETAIL:  Failing row contains (3, 2, string, user@example.com, string, string, null, 3, string, string, 6, 200.00, string, string, string, {"additionalProp1": {}}, t, string, 2025-07-22 23:51:52.069592, 2025-07-23 02:30:11.214642, 1, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\departments.py", line 145, in delete_department
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 463, in execute
+    n.execute_aggregate(self, set_)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 759, in execute_aggregate
+    persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "department_id" of relation "doctors" violates not-null constraint
+DETAIL:  Failing row contains (3, 2, string, user@example.com, string, string, null, 3, string, string, 6, 200.00, string, string, string, {"additionalProp1": {}}, t, string, 2025-07-22 23:51:52.069592, 2025-07-23 02:30:11.214642, 1, null, null, null).
+
+[SQL: UPDATE doctors SET department_id=%(department_id)s, updated_at=now() WHERE doctors.id = %(doctors_id)s]
+[parameters: {'department_id': None, 'doctors_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-07-23 08:00:22,997 - hospital_booking - ERROR - Unhandled error: (psycopg2.errors.NotNullViolation) null value in column "department_id" of relation "doctors" violates not-null constraint
+DETAIL:  Failing row contains (3, 2, string, user@example.com, string, string, null, 3, string, string, 6, 200.00, string, string, string, {"additionalProp1": {}}, t, string, 2025-07-22 23:51:52.069592, 2025-07-23 02:30:21.424219, 1, null, null, null).
+
+[SQL: UPDATE doctors SET department_id=%(department_id)s, updated_at=now() WHERE doctors.id = %(doctors_id)s]
+[parameters: {'department_id': None, 'doctors_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NotNullViolation: null value in column "department_id" of relation "doctors" violates not-null constraint
+DETAIL:  Failing row contains (3, 2, string, user@example.com, string, string, null, 3, string, string, 6, 200.00, string, string, string, {"additionalProp1": {}}, t, string, 2025-07-22 23:51:52.069592, 2025-07-23 02:30:21.424219, 1, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\api\v1\endpoints\departments.py", line 145, in delete_department
+    db.commit()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 463, in execute
+    n.execute_aggregate(self, set_)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 759, in execute_aggregate
+    persistence.save_obj(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "department_id" of relation "doctors" violates not-null constraint
+DETAIL:  Failing row contains (3, 2, string, user@example.com, string, string, null, 3, string, string, 6, 200.00, string, string, string, {"additionalProp1": {}}, t, string, 2025-07-22 23:51:52.069592, 2025-07-23 02:30:21.424219, 1, null, null, null).
+
+[SQL: UPDATE doctors SET department_id=%(department_id)s, updated_at=now() WHERE doctors.id = %(doctors_id)s]
+[parameters: {'department_id': None, 'doctors_id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+2025-07-23 09:51:23,266 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-23 09:52:18,280 - hospital_booking - ERROR - Unhandled error: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 328, in app
+    |     content = await serialize_response(
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 182, in serialize_response
+    |     return field.serialize(
+    |            ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\_compat.py", line 152, in serialize
+    |     return self._type_adapter.dump_python(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\pydantic\type_adapter.py", line 572, in dump_python
+    |     return self.serializer.to_python(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 182, in serialize_response
+    return field.serialize(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\_compat.py", line 152, in serialize
+    return self._type_adapter.dump_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\pydantic\type_adapter.py", line 572, in dump_python
+    return self.serializer.to_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+
+2025-07-23 09:52:27,476 - hospital_booking - ERROR - Unhandled error: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 328, in app
+    |     content = await serialize_response(
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 182, in serialize_response
+    |     return field.serialize(
+    |            ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\_compat.py", line 152, in serialize
+    |     return self._type_adapter.dump_python(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\pydantic\type_adapter.py", line 572, in dump_python
+    |     return self.serializer.to_python(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 182, in serialize_response
+    return field.serialize(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\_compat.py", line 152, in serialize
+    return self._type_adapter.dump_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\pydantic\type_adapter.py", line 572, in dump_python
+    return self.serializer.to_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+
+2025-07-23 09:53:21,624 - hospital_booking - ERROR - Unhandled error: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 77, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 183, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    |     raise app_exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 328, in app
+    |     content = await serialize_response(
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 182, in serialize_response
+    |     return field.serialize(
+    |            ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\_compat.py", line 152, in serialize
+    |     return self._type_adapter.dump_python(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\pydantic\type_adapter.py", line 572, in dump_python
+    |     return self.serializer.to_python(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 182, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Ceymox\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_utils.py", line 83, in collapse_excgroups
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 184, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\app\main.py", line 38, in add_process_time_header
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\routing.py", line 182, in serialize_response
+    return field.serialize(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\fastapi\_compat.py", line 152, in serialize
+    return self._type_adapter.dump_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\pydantic\type_adapter.py", line 572, in dump_python
+    return self.serializer.to_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.hospital.Hospital'>
+
+2025-07-23 10:06:39,669 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Ceymox\OneDrive\Desktop\AI_booking_system\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'

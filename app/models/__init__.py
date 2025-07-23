@@ -1,7 +1,7 @@
-from ..database import Base
-from .patient import Patient
-from .doctor import Doctor, Department
-from .appointment import Appointment, TimeSlot
-from .conversation import Conversation, Review
-from .hospital import Hospital
-from .hospital_department import hospital_department
+from app.models.base import Base
+from app.models.user import User
+from app.models.hospital import Hospital
+from app.models.department import Department
+from app.models.doctor import Doctor
+from app.models.patient import Patient
+from app.models.appointment import Appointment
